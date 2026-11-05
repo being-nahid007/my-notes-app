@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f6b6b">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <title>My Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>My Notes</h1>
+    <span id="status" class="status" role="status"></span>
+    <button id="btnSettings" class="text-btn" type="button">Settings</button>
+  </header>
+
+  <div class="search">
+    <input id="search" type="search" placeholder="Search notes" autocomplete="off" aria-label="Search notes">
+  </div>
+
+  <main id="list" class="list" aria-live="polite"></main>
+
+  <button id="btnNew" class="fab" type="button">New note</button>
+
+  <section id="editor" class="sheet" hidden aria-label="Note editor">
+    <div class="bar">
+      <button id="btnBack" class="text-btn strong" type="button">Done</button>
+      <div class="spacer"></div>
+      <button id="btnPin" class="text-btn" type="button" aria-pressed="false">Pin</button>
+      <button id="btnDelete" class="text-btn danger" type="button">Delete</button>
+    </div>
+    <input id="title" class="title" placeholder="Title" maxlength="200" autocomplete="off" aria-label="Title">
+    <textarea id="body" class="body" placeholder="Write your note" aria-label="Note text"></textarea>
+  </section>
+
+  <section id="settings" class="sheet" hidden aria-label="Settings">
+    <div class="bar">
+      <button id="btnSettingsBack" class="text-btn strong" type="button">Close</button>
+    </div>
+    <div class="form">
+      <h2>Sync</h2>
+      <p class="hint">Notes are always saved on this phone. To sync them with your server, enter its address. Leave it empty to use the app offline only.</p>
+      <label for="server">Server address</label>
+      <input id="server" type="url" inputmode="url" placeholder="http://192.168.0.10:3000" autocomplete="off">
+      <label for="apiKey">API key (if your server uses one)</label>
+      <input id="apiKey" type="password" autocomplete="off">
+      <button id="btnSaveSettings" class="primary" type="button">Save and sync</button>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" hidden role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

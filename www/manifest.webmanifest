@@ -1,0 +1,11 @@
+{
+  "name": "My Notes",
+  "short_name": "Notes",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#eef2f3",
+  "theme_color": "#0f6b6b",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
